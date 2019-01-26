@@ -104,6 +104,8 @@ public class Character : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
+
         // Check if left or right keys are pressed
         // - Gives decimals from -1 to +1
         //float moveValue = Input.GetAxis("Horizontal");
