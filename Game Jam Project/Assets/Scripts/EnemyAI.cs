@@ -27,10 +27,9 @@ public class EnemyAI : MonoBehaviour {
 
     private int currentWaypoint = 0;
 
-    private bool searchingForPlayer = false
+    private bool searchingForPlayer = false;
 
-     void Start()
-    {
+     void Start() {
         seeker = GetComponent<Seeker>();
         rb = GetComponent<Rigidbody2D>();
 
@@ -49,17 +48,35 @@ public class EnemyAI : MonoBehaviour {
         StartCoroutine (UpdatePath ());
     }
     
-    IEnumerator SearchForPlayer ()
-    {
-        GameObject.FindGameObjectWithTag ("Player")
+    IEnumerator SearchForPlayer() {
+        GameObject sResult = GameObject.FindGameObjectWithTag("Player");
+        target = GameObject.FindGameObjectWithTag("Player").transform;
+        if(sResult == null)
+        {
+            yield return new WaitForSeconds(0.5f);
+            StartCoroutine (SearchForPlayer() );
+        } else
+        {
+            target = sResult.transform;
+            searchingForPlayer = false;
+            StartCoroutine (UpdatePath() );
+            return false;
+        }
     }
 
     IEnumerator UpdatePath ()
     {
-        if (target == null)
-        { 
+        if (target = null)
+        {
+            if (!searchingForPlayer)
+            {
+                searchingForPlayer = true;
+                StartCoroutine(SearchForPlayer());
+            }
+
             return false;
         }
+
         seeker.StartPath(transform.position, target.position, OnPathComplete);
 
         yield return new WaitForSeconds(1f/ updateRate);
@@ -82,12 +99,18 @@ public class EnemyAI : MonoBehaviour {
 
     void FixedUpdate()
     {
-        if (target == null)
+        if (target = null)
         {
-           return;
+            if (!searchingForPlayer)
+            {
+                searchingForPlayer = true;
+                StartCoroutine(SearchForPlayer());
+            }
+
+            return;
         }
 
-        if(path == null)
+        if (path == null)
         {
             return;
         }
