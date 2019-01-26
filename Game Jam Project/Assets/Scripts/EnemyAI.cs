@@ -66,4 +66,35 @@ public class EnemyAI : MonoBehaviour {
 
         }
     }
+
+    void FixedUpdate()
+    {
+        if (target == null)
+        {
+            return false;
+        }
+
+        if(path == null)
+        {
+            return;
+        }
+
+        if(currentWaypoint >= path.vectorPath.Count)
+        {
+            if (pathIsEnded)
+                return;
+
+            Debug.Log("Path reached");
+            pathIsEnded = true;
+            return;
+        }
+
+        pathIsEnded = false;
+
+        Vector3 dir = (path.vectorPath[currentWaypoint] transform.position).normalized;
+        dir += speed * Time.fixedDeltaTime;
+
+
+        rb.AddForce(dir, fMode);
+    }
 }
