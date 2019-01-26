@@ -33,7 +33,7 @@ public class EnemyAI : MonoBehaviour {
         seeker = GetComponent<Seeker>();
         rb = GetComponent<Rigidbody2D>();
 
-        if (target = null)
+        if (target == null)
         {
             if (!searchingForPlayer)
             {
@@ -66,7 +66,7 @@ public class EnemyAI : MonoBehaviour {
 
     IEnumerator UpdatePath ()
     {
-        if (target = null)
+        if (target == null)
         {
             if (!searchingForPlayer)
             {
