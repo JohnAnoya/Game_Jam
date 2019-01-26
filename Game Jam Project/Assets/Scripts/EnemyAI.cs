@@ -99,7 +99,7 @@ public class EnemyAI : MonoBehaviour {
 
     void FixedUpdate()
     {
-        if (target = null)
+        if (target == null)
         {
             if (!searchingForPlayer)
             {
