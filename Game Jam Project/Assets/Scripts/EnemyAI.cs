@@ -72,7 +72,7 @@ public class EnemyAI : MonoBehaviour {
     {
         if (target == null)
         {
-           // return false;
+           return;
         }
 
         if(path == null)
