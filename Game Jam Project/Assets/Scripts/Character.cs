@@ -26,6 +26,7 @@ public class Character : MonoBehaviour
 
     public int points { get; set; }
 
+
     // Use this for initialization
     void Start()
     {
@@ -59,6 +60,7 @@ public class Character : MonoBehaviour
         float moveValue = Input.GetAxisRaw("Horizontal");
 
         Debug.Log(facingRight);
+        Debug.Log(moveValue); 
 
         if (moveValue == 1.0f)
         {
@@ -89,47 +91,6 @@ public class Character : MonoBehaviour
         rb2d.velocity = new Vector2(moveValue * speed, rb2d.velocity.y);
 
         // checks if the user is not on the ground and touching a wall 
-        if (!isGrounded)
-        {
-            wallCheck = Physics2D.OverlapCircle(wallCheckPoint.position, 0.1f, wallLayer);
-
-            if (facingRight && Input.GetAxis("Horizontal") > 0.1f || !facingRight && Input.GetAxis("Horizontal") < 0.1f)
-            {
-                if (wallCheck)
-                {
-                    WallSliding();
-                }
-            }
-
-        }
-
-        if (wallCheck == false || isGrounded)
-        {
-            wallSlide = false;
-        }
 
     }
-
-    // this function will decrease the y velocity of the player to simulate the effect of wall sliding 
-    void WallSliding()
-    {
-        rb2d.velocity = new Vector2(rb2d.velocity.x, -0.4f);
-
-        wallSlide = true;
-
-        if (Input.GetButtonDown("Jump"))
-        {
-            if (facingRight)
-            {
-                rb2d.AddForce(new Vector2(-80, 80) * jumpF);
-            }
-            else
-            {
-                rb2d.AddForce(new Vector2(80, 80) * jumpF);
-            }
-        }
-
-    }
-
-
 }
