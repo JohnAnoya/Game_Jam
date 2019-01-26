@@ -4,6 +4,7 @@ using System.Collections;
 
 [RequireComponent(typeof (Rigidbody2D))]
 [RequireComponent (typeof (Seeker))]
+
 public class EnemyAI : MonoBehaviour {
 
     public Transform target;
@@ -45,7 +46,7 @@ public class EnemyAI : MonoBehaviour {
     {
         if (target == null)
         { 
-            return false;
+            //return false;
         }
         seeker.StartPath(transform.position, target.position, OnPathComplete);
 
@@ -71,7 +72,7 @@ public class EnemyAI : MonoBehaviour {
     {
         if (target == null)
         {
-            return false;
+           // return false;
         }
 
         if(path == null)
@@ -91,10 +92,11 @@ public class EnemyAI : MonoBehaviour {
 
         pathIsEnded = false;
 
-        Vector3 dir = (path.vectorPath[currentWaypoint] transform.position).normalized;
-        dir += speed * Time.fixedDeltaTime;
+        //Vector3 dir = (path.vectorPath[currentWaypoint] transform.position).normalized;
+
+      //  dir += speed * Time.fixedDeltaTime;
 
 
-        rb.AddForce(dir, fMode);
+       // rb.AddForce(dir, fMode);
     }
 }

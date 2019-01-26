@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody2D))]
-[RequireComponent(typeof(CapsuleCollider2D))]
+[RequireComponent(typeof(BoxCollider2D))]
+
 public class Character : MonoBehaviour
 {
 
@@ -25,11 +26,6 @@ public class Character : MonoBehaviour
     public LayerMask isGroundLayer;
     public Transform groundCheck;
     public float groundCheckRadius;
-
-    // Makes a private reference to Animator Component
-    Animator anim;
-
-    // Might be used later on as an add on
    
 
     // Use this for initialization
@@ -88,24 +84,12 @@ public class Character : MonoBehaviour
             // Find gameObject to attach
             groundCheck = GameObject.Find("GroundCheck").GetComponent<Transform>();
         }
-
-        // Used to get and save a reference to the Animator Component
-        anim = GetComponent<Animator>();
-
-        // Check if anim variable was set in the inspector
-        if (!anim)
-        {
-            // Prints a warning message to the Console
-            // - Open Console by going to Window-->Console (or Ctrl+Shift+C)
-            Debug.LogError("Animator not found on " + name);
-        }
     }
 
     // Update is called once per frame
     void Update()
     {
         
-
         // Check if left or right keys are pressed
         // - Gives decimals from -1 to +1
         //float moveValue = Input.GetAxis("Horizontal");
@@ -149,13 +133,5 @@ public class Character : MonoBehaviour
         if (rb)
             // Make player move left or right based off moveValue
             rb.velocity = new Vector2(moveValue * speed, rb.velocity.y);
-
-        // Make sure Animator is attached before doing stuff
-        if (anim)
-        {
-            // Activate tranisitions in Animator
-            anim.SetBool("Grounded", isGrounded);
-            anim.SetFloat("Movement", Mathf.Abs(moveValue));
-        }
     }
 }
