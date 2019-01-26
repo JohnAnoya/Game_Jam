@@ -30,7 +30,7 @@ public class Character : MonoBehaviour
     Animator anim;
 
     // Might be used later on as an add on
-    SuperPower sp;
+   
 
     // Use this for initialization
     void Start()

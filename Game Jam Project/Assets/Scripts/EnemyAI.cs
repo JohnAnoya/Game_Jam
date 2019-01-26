@@ -24,7 +24,7 @@ public class EnemyAI : MonoBehaviour {
 
     public float nextWaypointDistance = 3;
 
-    private int currentWaypoint - 0;
+    private int currentWaypoint = 0;
 
      void Start()
     {
