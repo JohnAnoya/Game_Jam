@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using Pathfinding;
+using System.Collections;
 
 [RequireComponent(typeof (Rigidbody2D))]
 [RequireComponent (typeof (Seeker))]
@@ -36,6 +37,21 @@ public class EnemyAI : MonoBehaviour {
             return;
         }
         seeker.StartPath(transform.position, target.position, OnPathComplete);
+
+        StartCoroutine (UpdatePath ());
+    }
+    
+    IEnumerator UpdatePath ()
+    {
+        if (target == null)
+        { 
+            return false;
+        }
+        seeker.StartPath(transform.position, target.position, OnPathComplete);
+
+        yield return new WaitForSeconds(1 / updateRate);
+        StartCoroutine (UpdatePath());
+
 
     }
 
