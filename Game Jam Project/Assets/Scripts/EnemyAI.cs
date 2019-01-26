@@ -92,11 +92,19 @@ public class EnemyAI : MonoBehaviour {
 
         pathIsEnded = false;
 
-        //Vector3 dir = (path.vectorPath[currentWaypoint] transform.position).normalized;
+        Vector3 dir = (path.vectorPath[currentWaypoint] - transform.position).normalized;
 
-      //  dir += speed * Time.fixedDeltaTime;
+        dir *= speed * Time.fixedDeltaTime;
 
 
-       // rb.AddForce(dir, fMode);
+        rb.AddForce(dir, fMode);
+
+        float dist = Vector3.Distance(transform.position, path.vectorPath[currentWaypoint]);
+
+       if (dist < nextWaypointDistance)
+        {
+            currentWaypoint++;
+            return;
+        }
     }
 }
