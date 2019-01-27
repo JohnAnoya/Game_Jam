@@ -26,6 +26,7 @@ public class FallingPlatform : MonoBehaviour {
     {
         yield return new WaitForSeconds(fallTime);
         rb2d.isKinematic = false;
+        yield return new WaitForSeconds(0.6f);
         GetComponent<Collider2D>().isTrigger = true;
         yield return 0;
     }

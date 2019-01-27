@@ -110,6 +110,7 @@ public class Character : MonoBehaviour
             playerDeath = true;
 
             rb2d.transform.position = spawnPoint;
+            SceneManager.LoadScene("Level_2");
         }
         playerDeath = false;
 

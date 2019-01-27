@@ -32,7 +32,7 @@ public class Spike : MonoBehaviour {
         }
         if (hasTriggered)
         {
-            sprite.enabled = !sprite.enabled;
+           // sprite.enabled = !sprite.enabled;
         }
 
     }
