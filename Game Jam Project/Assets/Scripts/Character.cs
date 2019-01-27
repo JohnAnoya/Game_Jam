@@ -119,7 +119,12 @@ public class Character : MonoBehaviour
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }
-      }
+
+        if (collider.gameObject.CompareTag("end"))
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 4);
+        }
+    }
 
 }
 

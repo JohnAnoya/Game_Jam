@@ -8,6 +8,7 @@ TagManager:
   - trap
   - door
   - fall
+  - end
   layers:
   - Default
   - TransparentFX
