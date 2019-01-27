@@ -79,10 +79,12 @@ public class Character : MonoBehaviour
         if (moveValue == 1.0f)
         {
             facingRight = true;
+            gameObject.GetComponent<SpriteRenderer>().flipX = false;
         }
         else if (moveValue == -1.0f)
         {
             facingRight = false;
+            gameObject.GetComponent<SpriteRenderer>().flipX = true;
         }
 
         if (groundCheck)
