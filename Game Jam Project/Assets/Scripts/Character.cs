@@ -41,7 +41,7 @@ public class Character : MonoBehaviour
         points = 0;
 
         speed = 8.0f;
-        jumpF = 10.0f;
+        jumpF = 15.0f;
 
 
         rb2d = GetComponent<Rigidbody2D>();
@@ -103,7 +103,7 @@ public class Character : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collider)
     {
-        if (collider.gameObject.CompareTag("spikes"))
+        if (collider.gameObject.CompareTag("spikes") || collider.gameObject.CompareTag("spikes"))
         {
             playerDeath = true;
 
