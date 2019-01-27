@@ -104,9 +104,10 @@ public class Character : MonoBehaviour
 
 
     private void OnTriggerEnter2D(Collider2D collider)
-    {
+    { 
         if (collider.gameObject.CompareTag("spikes") || collider.gameObject.CompareTag("fall"))
         {
+           
             playerDeath = true;
 
             rb2d.transform.position = spawnPoint;
@@ -118,7 +119,8 @@ public class Character : MonoBehaviour
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }
-    }
-    }
+      }
+
+}
 
 

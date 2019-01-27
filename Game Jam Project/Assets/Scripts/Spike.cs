@@ -9,13 +9,12 @@ public class Spike : MonoBehaviour {
 
     SpriteRenderer sprite;
 
-    bool hasTriggered;
+  
 
 	// Use this for initialization
 	void Start ()
     {
-        hasTriggered = false;
-
+     
         Spikes = GetComponent<GameObject>();
 
         sprite = GetComponent<SpriteRenderer>();
@@ -27,13 +26,12 @@ public class Spike : MonoBehaviour {
     {
         if (collider.gameObject.CompareTag("Player"))
         {
-            sprite.enabled = !sprite.enabled;
-            hasTriggered = true;
-        }
-        if (hasTriggered)
-        {
-           // sprite.enabled = !sprite.enabled;
-        }
 
+            sprite.enabled = !sprite.enabled;
+            
+            
+        }
+       
     }
+
 }
