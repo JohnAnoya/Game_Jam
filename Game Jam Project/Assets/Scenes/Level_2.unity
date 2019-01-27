@@ -942,7 +942,6 @@ GameObject:
   - component: {fileID: 457611967}
   - component: {fileID: 457611966}
   - component: {fileID: 457611965}
-  - component: {fileID: 457611964}
   m_Layer: 0
   m_Name: Spikes_3
   m_TagString: spikes
@@ -950,18 +949,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &457611964
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 457611963}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 729613781e013334ea890d205c3325d0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Spikes: {fileID: 457611963}
 --- !u!61 &457611965
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1116,7 +1103,6 @@ GameObject:
   - component: {fileID: 842063923}
   - component: {fileID: 842063922}
   - component: {fileID: 842063921}
-  - component: {fileID: 842063920}
   m_Layer: 0
   m_Name: Spikes_7
   m_TagString: spikes
@@ -1124,18 +1110,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &842063920
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 842063919}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 729613781e013334ea890d205c3325d0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Spikes: {fileID: 842063919}
 --- !u!61 &842063921
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1822,7 +1796,6 @@ GameObject:
   - component: {fileID: 1494160509}
   - component: {fileID: 1494160508}
   - component: {fileID: 1494160507}
-  - component: {fileID: 1494160506}
   m_Layer: 0
   m_Name: Spikes_4
   m_TagString: spikes
@@ -1830,18 +1803,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1494160506
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1494160505}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 729613781e013334ea890d205c3325d0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Spikes: {fileID: 1494160505}
 --- !u!61 &1494160507
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2422,7 +2383,6 @@ GameObject:
   - component: {fileID: 1781999978}
   - component: {fileID: 1781999977}
   - component: {fileID: 1781999976}
-  - component: {fileID: 1781999975}
   m_Layer: 0
   m_Name: Spikes
   m_TagString: spikes
@@ -2430,18 +2390,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1781999975
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1781999974}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 729613781e013334ea890d205c3325d0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Spikes: {fileID: 1781999974}
 --- !u!61 &1781999976
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2866,7 +2814,6 @@ GameObject:
   - component: {fileID: 2020818439}
   - component: {fileID: 2020818438}
   - component: {fileID: 2020818437}
-  - component: {fileID: 2020818436}
   m_Layer: 0
   m_Name: Spikes_6
   m_TagString: spikes
@@ -2874,18 +2821,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &2020818436
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2020818435}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 729613781e013334ea890d205c3325d0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Spikes: {fileID: 2020818435}
 --- !u!61 &2020818437
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2984,7 +2919,6 @@ GameObject:
   - component: {fileID: 2040728898}
   - component: {fileID: 2040728897}
   - component: {fileID: 2040728896}
-  - component: {fileID: 2040728895}
   m_Layer: 0
   m_Name: Spikes_2
   m_TagString: spikes
@@ -2992,18 +2926,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &2040728895
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2040728894}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 729613781e013334ea890d205c3325d0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Spikes: {fileID: 2040728894}
 --- !u!61 &2040728896
 BoxCollider2D:
   m_ObjectHideFlags: 0
