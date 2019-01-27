@@ -6,6 +6,7 @@ TagManager:
   tags:
   - spikes
   - trap
+  - door
   layers:
   - Default
   - TransparentFX

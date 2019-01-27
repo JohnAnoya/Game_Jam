@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 [RequireComponent(typeof(Rigidbody2D))]
 [RequireComponent(typeof(BoxCollider2D))]
@@ -98,8 +99,8 @@ public class Character : MonoBehaviour
         }
         rb2d.velocity = new Vector2(moveValue * speed, rb2d.velocity.y);
     }
-    
- 
+
+
     private void OnTriggerEnter2D(Collider2D collider)
     {
         if (collider.gameObject.CompareTag("spikes"))
@@ -109,6 +110,12 @@ public class Character : MonoBehaviour
             rb2d.transform.position = spawnPoint;
         }
         playerDeath = false;
+
+        if (collider.gameObject.CompareTag("door"))
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        }
+    }
     }
 
-}
+
