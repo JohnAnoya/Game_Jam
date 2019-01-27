@@ -34,8 +34,8 @@ public class Character : MonoBehaviour
 
         points = 0;
 
-        speed = 6.0f;
-        jumpF = 7.5f;
+        speed = 8.0f;
+        jumpF = 10.0f;
 
 
         rb2d = GetComponent<Rigidbody2D>();
