@@ -19,6 +19,9 @@ public class Character : MonoBehaviour
     public LayerMask isGroundLayer;
     public bool facingRight;
 
+    // player Animator 
+    Animator animator;
+
     // player spawns
     public Vector2 spawnPoint;
     public bool newSpawnPoint = false;
@@ -60,6 +63,9 @@ public class Character : MonoBehaviour
             groundCheckRad = 0.1f;
         }
 
+
+        animator = GetComponent<Animator>();
+
         // setting the coordinates to the spawnpoint in scene 1.
         spawnPoint = new Vector3(rb2d.position.x, rb2d.position.y);
 
@@ -100,8 +106,18 @@ public class Character : MonoBehaviour
             }
         }
         rb2d.velocity = new Vector2(moveValue * speed, rb2d.velocity.y);
+        playerAnimations(moveValue);
+
     }
 
+    void playerAnimations(float moveValue)
+    {
+        if (animator)
+        {
+            animator.SetFloat("Movement", Mathf.Abs(moveValue));
+            animator.SetBool("Grounded", isGrounded);
+        }
+    }
 
     private void OnTriggerEnter2D(Collider2D collider)
     { 

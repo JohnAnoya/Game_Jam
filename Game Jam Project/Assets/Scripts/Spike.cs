@@ -9,12 +9,9 @@ public class Spike : MonoBehaviour {
 
     SpriteRenderer sprite;
 
-  
-
 	// Use this for initialization
 	void Start ()
     {
-     
         Spikes = GetComponent<GameObject>();
 
         sprite = GetComponent<SpriteRenderer>();
@@ -26,9 +23,7 @@ public class Spike : MonoBehaviour {
     {
         if (collider.gameObject.CompareTag("Player"))
         {
-
             sprite.enabled = !sprite.enabled;
-            
             
         }
        
