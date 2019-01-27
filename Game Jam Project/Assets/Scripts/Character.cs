@@ -18,6 +18,11 @@ public class Character : MonoBehaviour
     public LayerMask isGroundLayer;
     public bool facingRight;
 
+    // player spawns
+    public Vector2 spawnPoint;
+    public bool newSpawnPoint = false;
+    public bool playerDeath = false;
+
     // Character Walljump/Slide
     public bool wallSlide;
     public Transform wallCheckPoint;
@@ -53,14 +58,22 @@ public class Character : MonoBehaviour
         {
             groundCheckRad = 0.1f;
         }
+
+        // setting the coordinates to the spawnpoint in scene 1.
+        spawnPoint = new Vector3(rb2d.position.x, rb2d.position.y);
+
     }
     // Update is called once per frame
     void Update()
     {
-        float moveValue = Input.GetAxisRaw("Horizontal");
+        CharacterMovement();
 
-        Debug.Log(facingRight);
-        Debug.Log(moveValue); 
+    }
+
+
+    void CharacterMovement()
+    {
+        float moveValue = Input.GetAxisRaw("Horizontal");
 
         if (moveValue == 1.0f)
         {
@@ -83,14 +96,19 @@ public class Character : MonoBehaviour
                 rb2d.AddForce(Vector2.up * jumpF, ForceMode2D.Impulse);
             }
         }
-        else
-        {
-
-        }
-
         rb2d.velocity = new Vector2(moveValue * speed, rb2d.velocity.y);
-
-        // checks if the user is not on the ground and touching a wall 
-
     }
+    
+ 
+    private void OnTriggerEnter2D(Collider2D collider)
+    {
+        if (collider.gameObject.CompareTag("spikes"))
+        {
+            playerDeath = true;
+
+            rb2d.transform.position = spawnPoint;
+        }
+        playerDeath = false;
+    }
+
 }

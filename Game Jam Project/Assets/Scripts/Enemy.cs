@@ -20,7 +20,7 @@ public class Enemy : MonoBehaviour {
         Vector2 lineCastPos = tf.position - tf.right * width;
         Debug.DrawLine(lineCastPos, lineCastPos + Vector2.down);
         bool isGrounded = Physics2D.Linecast(lineCastPos, lineCastPos + Vector2.down, enemyMask);
-        bool isBlocked = Physics2D.Linecast(lineCastPos, lineCastPos - tf.right, enemyMask);
+       // bool isBlocked = Physics2D.Linecast(lineCastPos, lineCastPos - tf.right, enemyMask);
 
 
         if (!isGrounded)
