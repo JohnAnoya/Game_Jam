@@ -18,10 +18,21 @@ public class Enemy : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         Vector2 lineCastPos = tf.position - tf.right * width;
-        
+        Debug.DrawLine(lineCastPos, lineCastPos + Vector2.down);
+        bool isGrounded = Physics2D.Linecast(lineCastPos, lineCastPos + Vector2.down, enemyMask);
+        bool isBlocked = Physics2D.Linecast(lineCastPos, lineCastPos - tf.right, enemyMask);
+
+
+        if (!isGrounded)
+        {
+            Vector3 currRot = tf.eulerAngles;
+            currRot.y += 180;
+            tf.eulerAngles = currRot;
+        }
+
         // always move foward
         Vector2 myVel = rb.velocity;
-        myVel.x = speed;
+        myVel.x = -tf.right.x * speed;
         rb.velocity = myVel;
 	}
 }
